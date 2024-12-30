@@ -29,6 +29,7 @@ export const themeStore = writable<ThemeStore>({
 	resolvedTheme: undefined,
 	systemTheme: undefined
 })
+
 export const setTheme = (theme: "dark" | "light" | "system"): void => {
 	themeStore.update((store) => ({ ...store, theme }))
 }

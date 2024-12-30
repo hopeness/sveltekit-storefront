@@ -16,7 +16,8 @@
 	const client = data.client
 	setContextClient(client)
 	const cartQuery = queryStore({ 
-		client, query: GetActiveOrder, 
+		client, 
+		query: GetActiveOrder, 
 		pause: true, 
 		requestPolicy: 'network-only', 
 		context: { additionalTypenames: ['ActiveOrder'] } 
@@ -24,7 +25,8 @@
 	const userQuery = queryStore({ 
 		client, 
 		query: GetCustomer, 
-		pause: true, requestPolicy: 'network-only', 
+		pause: true, 
+		requestPolicy: 'network-only', 
 		context: { additionalTypenames: ['ActiveCustomer'] } 
 	})
 	$effect(() => { if ($cartQuery.data?.activeOrder) cartStore.set($cartQuery.data.activeOrder) })
