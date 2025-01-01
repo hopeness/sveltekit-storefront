@@ -10,18 +10,24 @@ export const cartStore: Writable<FragmentType<typeof ActiveOrder> | null> =
 export const userStore: Writable<FragmentType<typeof Customer> | null> =
   writable();
 
+export const ThemeModes = ["dark", "light"] as const;
+export const ThemeModesWithSystem = [...ThemeModes, "system"] as const;
+
+export type ThemeModeOption = (typeof ThemeModes)[number];
+export type ThemeModeWithSystemOption = (typeof ThemeModesWithSystem)[number];
+
 export interface ThemeStore {
   /** List of all available theme names */
-  themes: string[];
+  themes: ThemeModeWithSystemOption[];
   /** Forced theme name for the current page */
-  forcedTheme?: string;
+  forcedTheme?: ThemeModeWithSystemOption;
   /** Update the theme */
   /** Active theme name */
-  theme?: "dark" | "light" | "system";
+  theme?: ThemeModeWithSystemOption;
   /** If `enableSystem` is true and the active theme is "system", this returns whether the system preference resolved to "dark" or "light". Otherwise, identical to `theme` */
-  resolvedTheme?: string;
+  resolvedTheme?: ThemeModeOption;
   /** If enableSystem is true, returns the System theme preference ("dark" or "light"), regardless what the active theme is */
-  systemTheme?: "dark" | "light";
+  systemTheme?: ThemeModeOption;
 }
 
 export const themeStore = writable<ThemeStore>({
@@ -32,6 +38,6 @@ export const themeStore = writable<ThemeStore>({
   systemTheme: undefined,
 });
 
-export const setTheme = (theme: "dark" | "light" | "system"): void => {
+export const setTheme = (theme: ThemeModeWithSystemOption): void => {
   themeStore.update((store) => ({ ...store, theme }));
 };
