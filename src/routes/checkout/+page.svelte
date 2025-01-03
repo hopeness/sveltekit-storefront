@@ -383,7 +383,7 @@
 					<div class="flex justify-between bg-white w-full h-14 py-4 px-6 border-b border-gray-300 rounded-t-md">
 						<h3 class="text-lg font-medium whitespace-nowrap mr-4">Credit Card</h3>
 						<div class="ml-auto">
-							<img src="/img/icons/credit-cards.png" class="h-full object-fit" alt="Visa, Master Card, American Express" />
+							<img src="/img/credit-cards.png" class="h-full object-fit" alt="Visa, Master Card, American Express" />
 						</div>
 					</div>
 					<div class="grid grid-cols-2 p-6 pt-0 gap-x-6 gap-y-3 bg-[#f9f9f9] rounded-b-md">
