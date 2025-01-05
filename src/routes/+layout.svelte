@@ -51,7 +51,7 @@
 	{@render children?.()}
 {:else}
 	<Theme />
-	<Toaster theme={$themeStore.theme || 'light'} position="top-right" />
+	<Toaster theme={$themeStore.theme || 'light'} position="top-center" />
 	<NavBar {collections} />
 	<div class="relative">{@render children?.()}</div>
 	<Footer />
