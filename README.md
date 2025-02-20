@@ -4,6 +4,10 @@
 
 Currently, this starter uses Braintree checkout only.  Your backend must be configured for Braintree payments.
 
+## NOTE
+
+For even more ideas to get you started, someone shared a customized version of this starter here: https://github.com/NikoJunttila/vendure-svelte-pevey-storefront
+
 ## Creating a project
 
 ```bash
